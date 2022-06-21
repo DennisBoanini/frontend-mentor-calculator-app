@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/DennisBoanini/frontend-mentor-calculator-app](https://github.com/DennisBoanini/frontend-mentor-calculator-app)
-- Live Site URL: [https://dennisboanini.github.io/frontend-mentor-calculator-app/](frontend-mentor-calculator-app)
+- Live Site URL: [https://dennisboanini.github.io/frontend-mentor-calculator-app/](https://dennisboanini.github.io/frontend-mentor-calculator-app/)
 
 ## My process
 
