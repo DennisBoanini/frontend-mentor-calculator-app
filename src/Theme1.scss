@@ -1,0 +1,229 @@
+.theme-1 {
+  --body-bg: hsl(222, 26%, 31%);
+  --keypad-and-toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  --del-and-reset-bg: hsl(225, 21%, 49%);
+  --del-and-reset-shadow: hsl(224, 28%, 35%);
+  --equal-and-theme-toggle-bg: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  --text-color: hsl(221, 14%, 31%);
+  --header-text-color: #FFFFFF;
+  --white: #FFFFFF;
+}
+
+.theme-2 {
+  --body-bg: hsl(0, 0%, 90%);
+  --keypad-and-toggle-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  --del-and-reset-bg: hsl(185, 42%, 37%);
+  --del-and-reset-shadow: hsl(185, 58%, 25%);
+  --equal-and-theme-toggle-bg: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+
+  --text-color: hsl(60, 10%, 19%);
+  --header-text-color: hsl(60, 10%, 19%);
+  --white: #FFFFFF;
+}
+
+.theme-3 {
+  --body-bg: hsl(268, 75%, 9%);
+  --keypad-and-toggle-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  --del-and-reset-bg: hsl(281, 89%, 26%);
+  --del-and-reset-shadow: hsl(285, 91%, 52%);
+  --equal-and-theme-toggle-bg: hsl(176, 100%, 44%);
+  --equal-key-shadow: hsl(177, 92%, 70%);
+  --key-bg: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+
+  --text-color: hsl(52, 100%, 62%);
+  --header-text-color: hsl(52, 100%, 62%);
+  --white: #FFFFFF;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--body-bg);
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .calc-label {
+      color: var(--header-text-color);
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .theme-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .theme-label {
+        color: var(--header-text-color);
+        font-size: 0.6rem;
+      }
+
+      .theme-numbers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: var(--header-text-color);
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      .three-toggle {
+        display: flex;
+        justify-content: center;
+        border-radius: 30px;
+        background-color: var(--keypad-and-toggle-bg);
+
+        input {
+          height: 20px;
+          width: 20px;
+          appearance: none;
+          background-color: var(--equal-and-theme-toggle-bg);
+          border-radius: 50%;
+          opacity: 0;
+          margin: 5px;
+
+          &:hover {
+            cursor: pointer;
+            filter: brightness(150%);
+          }
+        }
+
+        .show {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .screen {
+    background-color: var(--screen-bg);
+    min-height: 4em;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+    padding: 0.5em;
+    color: var(--header-text-color);
+    word-break: break-all;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .calc {
+    background-color: var(--keypad-and-toggle-bg);
+    margin-top: 0.7em;
+    border-radius: 10px;
+    padding: 15px;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .key {
+        border-radius: 10px;
+        width: 20%;
+        height: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        cursor: pointer;
+        background-color: var(--key-bg);
+        box-shadow: 0 5px 0 var(--key-shadow);
+
+        &:active {
+          transform: scale(.98);
+        }
+
+        &:hover {
+          filter: brightness(150%);
+        }
+
+        .num {
+          font-size: 2.5rem;
+          color: var(--text-color);
+        }
+      }
+
+      .key.del {
+        background-color: var(--del-and-reset-bg);
+        box-shadow: 0 5px 0 var(--del-and-reset-shadow);
+
+        &:hover {
+          filter: brightness(150%);
+        }
+
+        .del-label {
+          font-size: 2.5rem;
+          color: var(--white);
+        }
+      }
+    }
+
+    .row.last-row {
+      .key {
+        width: 50%;
+
+        &:active {
+          transform: scale(.98);
+        }
+      }
+
+      .key.reset {
+        background-color: var(--del-and-reset-bg);
+        box-shadow: 0 5px 0 var(--del-and-reset-shadow);
+
+        &:hover {
+          filter: brightness(150%);
+        }
+
+        .reset-label {
+          font-size: 2rem;
+          color: var(--white);
+        }
+      }
+
+      .key.equal {
+        background-color: var(--equal-and-theme-toggle-bg);
+        box-shadow: 0 5px 0 var(--equal-key-shadow);
+
+        &:hover {
+          filter: brightness(150%);
+        }
+
+        .equal-label {
+          font-size: 2rem;
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
